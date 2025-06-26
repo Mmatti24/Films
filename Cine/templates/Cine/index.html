@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film City</title>
+
+    <style>
+        body{
+            font-family: aptos;
+            margin: 0;
+            background-color: #eee;
+        }
+
+        nav{
+            background: #113;
+            padding: 25px 80px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: uppercase; 
+            text-align: center;  
+        }
+
+        .txt-nav{
+            color: #aaa;
+            margin: 0 30px;
+            text-decoration: none;
+            transition: all 0.5s ease;
+            text-transform: uppercase;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .txt-nav:hover{
+            color: #eee;
+        }
+
+        .activo{
+            color: #eee;
+        }
+
+        .titles{
+            font-size: 20px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            font-family: "arial rounded mt";
+            margin: 15px 0;
+        }
+        hr{
+            height: 2px;
+            background-color: #ccc;
+            border: none;
+            border-radius: 2px;
+        }
+        .linea-inicio{
+            height: 7px;
+            background-color: #ccc;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .titles2{
+            color: #bbb;
+        }
+
+        .lin-lat{
+            background-color: #eee;
+        }
+
+        .box-imagen{
+            background-color: #800;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://radio.unr.edu.ar/wp-content/uploads/2025/02/cine.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom;
+            background-attachment: fixed;
+            text-align: center;
+            padding: 40px;
+            padding-bottom: 45px;
+            font-family: "arial";
+        }
+
+        .txt-img{
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        h2{
+            font-size: 100px;
+            
+        }
+
+        .slogan{
+            font-size: 17px;
+            margin-top: 10px;
+        }
+
+        header{
+            color: #eee;
+        }
+
+        .contenido{
+            margin: 0 70px 0 270px;
+            width: 700px;
+            margin-top: 60px;
+        }
+
+        section{
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 60px;
+        }
+
+        .lateral{
+            width: 400px;
+            margin-top: 40px; 
+        }
+
+        .box-reseña{
+            box-sizing: border-box;
+            width: 700px;
+            color: #222;
+        }
+
+        h3{
+            color: #333;
+            font-size: 40px;
+            margin: 25px 0 20px 0;
+            font-family: "arial rounded mt";
+        }
+
+        div p{
+            margin-top: 0px;
+            color: #666;
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .user{
+            text-transform: uppercase;
+        }
+
+        .fecha{
+            display: block;
+            margin-top: 10px;
+        }
+
+        .reseña{
+            color: #222;
+            letter-spacing: 1.2px;
+            line-height: 25px;
+            font-size: 18px;
+        }
+
+        .box-right{
+            background-color: #113;
+            width: 380px;
+            border-radius: 5px;
+            margin: 0 0 30px 0;
+            padding: 20px;
+        }
+
+        .redes{
+            display: inline-block;
+            margin: 20px 12px;
+        }
+
+        .hitos{
+            font-family: "arial rounded mt";
+            font-size: 20px;
+            color: #bbb;
+            margin: 12px 0;
+        }
+
+        span{
+            text-decoration: underline;
+        }
+
+        footer{
+            background-color: #113;
+            padding: 25px 40px 25px 30px;
+            margin-top: 50px;
+            text-align: right;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer p, footer a{
+            display: inline;
+            text-decoration: none;
+            color: #eee;
+            font-family: "arial";
+        }
+
+        footer a{
+            transition: all 0.5s ease;
+        }
+        footer a:hover{
+            text-decoration: underline;
+        }
+
+        .img-redes{
+            width: 100px;
+            height: 100px;
+        }
+
+        .img-res{
+            width: 0.9em;
+            height: 0.8em;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="header" id="comienzo">
+            <a href="http://127.0.0.1:8000/evaluacion2" class="txt-nav activo">Inicio</a>
+            <a href="http://127.0.0.1:8000/categorias" class="txt-nav">Categorias</a>
+            <a href="http://127.0.0.1:8000/usuarios" class="txt-nav">Usuarios</a>
+            <a href="http://127.0.0.1:8000/historia" class="txt-nav">Historia</a>
+            <a href="mailto:matiasmoschella4@gmail.com" class="txt-nav">Contacto</a>
+        </nav>
+        <article class="box-imagen header">
+            <h2 class="txt-img">
+                Film City
+            </h2>
+            <p class="txt-img slogan">
+                Biblioteca de joyas filmacionales
+            </p>
+        </article>
+    </header>
+
+    
+
+    <section class="contenido">
+        <h1 class="titles">Reseñas de peliculas</h1>
+        <hr class="linea-inicio">
+        {% for reseña in reseñas %}
+            <article class="box-reseña">
+
+                <div class="box-nom">
+                    <h3> {{reseña.nombre_pelicula}} </h3>
+                </div>
+
+                <div class="box-fech">
+                    <p> 
+                        <img class="img-res" src="https://images.vexels.com/media/users/3/330278/isolated/preview/8cc99ea053cce7780e7dade68025b909-bombilla-que-contiene-circuitos.png">    {{reseña.categoria_pelicula}} 
+                    </p>
+                    <p class="user">
+                        <img class="img-res" src="https://static.vecteezy.com/system/resources/previews/024/983/914/non_2x/simple-user-default-icon-free-png.png" alt=""> {{reseña.user}} 
+                    </p>
+                    <p class="fecha">Lanzamiento: {{reseña.lanzamiento_pelicula}} <img class="img-res" src="https://cdn-icons-png.flaticon.com/512/61/61469.png" alt=""></p>
+                </div>
+    
+            
+
+            <p class="reseña"> {{reseña.reseña_pelicula|linebreaksbr}} </p>
+
+            </article>
+
+            <hr>
+
+        {% endfor %}
+        
+    </section>
+
+    <section class="lateral">
+        <article class="box-right">
+            <p class="titles titles2">Redes</p>
+
+            <hr class="linea-inicio lin-lat">
+
+            <a href="https://www.instagram.com/" class="redes">
+                <img class="img-redes" src="https://www.uc3m.es/uc3m/media/uc3m/img/mediana/original/im_instagram_gris/ig-grey.png" alt="">
+            </a>
+            <a href="https://www.facebook.com/?locale=es_LA" class="redes">
+                <img class="img-redes" src="https://www.uc3m.es/uc3m/media/uc3m/img/mediana/original/im_facebook_gris/fb-grey.png" alt="">
+            </a>
+            <a href="https://x.com/?lang=es" class="redes">
+                <img class="img-redes" src="https://www.uc3m.es/uc3m/media/uc3m/img/mediana/original/im_x_gris/x-grey.png" alt="">
+            </a>
+
+        </article>
+
+        <article class="box-right">
+            <p class="titles titles2">Trayectoria y Reconocimientos</p>
+            <hr class="linea-inicio lin-lat">
+            <p class="hitos">♦ Pagina WEB del año</p>
+            <p class="hitos">♦ Mejores reseñas de la industria</p>
+            <p class="hitos">♦ Mejor proyecto del curso</p>
+        </article>
+        
+        
+    </section>
+
+    <footer>
+
+        <p>
+            Copyright 2025
+        </p>
+
+        <a href="#comienzo">Volver al comienzo</a>
+    </footer>
+
+</body>
+</html>
